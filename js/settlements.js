@@ -3,22 +3,28 @@ var portCost = 280;
 var farmCost = 80;
 var mineryCost = 230;
 var shopCost = 500;
+var fabricCost = 1500;
 
 var sawhillTax = 10;
 var portTax = 10;
 var farmTax = 7;
 var mineryTax = 13;
 var shopTax = 3;
+var fabricTax = 9;
 
 var sawhillBenefict = 2;
 var portBenefict = 3;
 var farmBenefict = 2;
 var mineryBenefict = 3;
 var shopBenefict = 230;
+var fabricBenefict = 1000;
 
 var shopStoneCost = 6; //60
 var shopLumberCost = 10; //80
 var shopFoodCost = 14; //70
+var fabricFoodCost = 42;
+var fabricLumberCost = 30;
+
 
 class ExplotationBuild{
   constructor(y,x){
@@ -99,19 +105,19 @@ class Shop extends ExplotationBuild{
 class Fabric extends ExplotationBuild{
   constructor(y,x){
     super(y,x);
-    this.cost = shopCost;
+    this.cost = fabricCost;
     this.benefict = 0;
     this.material = fabric;
-    this.incomes = shopTax;
-    this.stoneCost = shopStoneCost;
-    this.foodCost = shopFoodCost;
-    this.lumberCost = shopLumberCost;
+    this.incomes = fabricTax;
+    this.stoneCost = fabricStoneCost;
+    this.foodCost = fabricFoodCost;
+    this.lumberCost = fabricLumberCost;
   }
     benefaction(){
       if(player.stone >= this.stoneCost && player.food >= this.foodCost && player.lumber >= this.lumberCost){
-          this.benefict = shopBenefict;
+          this.benefict = fabricBenefict;
       } else {
-        player.pushLog('this shop (' + this.x + ', ' + this.y + ') is not working');
+        player.pushLog('this fabric (' + this.x + ', ' + this.y + ') is not working');
       }
       return this.benefict;
     }

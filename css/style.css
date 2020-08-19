@@ -1,13 +1,7 @@
-body{
-
-}
 canvas {
   padding: 5px;
   background-color: rgb(156, 114, 82);
   border-radius: 5px;
-}
-canvas-cont{
-  
 }
 canvas:hover{
   cursor: pointer;
