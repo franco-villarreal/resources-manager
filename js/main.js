@@ -3,8 +3,8 @@ var ctx;
 var FPS = 60;
 var boxWidth = 64;
 var boxHeight = 64;
-var columns = Math.floor(window.innerWidth/boxWidth);
-var rows = Math.floor(640/boxHeight);
+var columns = 15;
+var rows = 10;
 var canvasWidth = boxWidth * columns;
 var canvasHeight = boxHeight * rows;
 var tileMap;
@@ -100,8 +100,8 @@ function initialize(){
 }
 
 function main(){
-  columns = Math.floor(window.innerWidth/boxWidth);
-  rows = Math.floor(640/boxHeight);
+  columns = 15;
+  rows = 10;
   canvasWidth = boxWidth * columns;
   canvasHeight = boxHeight * rows;
   clearScreen();

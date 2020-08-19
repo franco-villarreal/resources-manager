@@ -83,7 +83,7 @@ function drawUi(){
   ctx.fillText('SHOP',marginLeft2,boxHeight/2+boxHeight*5.25);
   ctx.fillText('FACTORY',marginLeft2,boxHeight/2+boxHeight*5.75);
   ctx.fillText('TIME: ' + ('0' + player.actualTime.getHours()).slice(-2) + ':' + ('0' + player.actualTime.getMinutes()).slice(-2)
-  + ':' + ('0' + player.actualTime.getSeconds()).slice(-2) + ' ', 64,boxHeight/2+boxHeight*7.25);
+  + ':' + ('0' + player.actualTime.getSeconds()).slice(-2) + ' ', 64,boxHeight/2+boxHeight*8.75);
   drawLogBox();
   drawPayBox();
 }
@@ -101,6 +101,8 @@ createSawhill = 8;
 createMinery = 9;
 createPort = 10;
 createShop = 11;
+createFabric = 12;
+moveCameraButtons = 19;
 */
 
 function drawLogBox(){
@@ -146,7 +148,7 @@ function drawAuxText(y){
       line3 = 'de este, a cambio de oro.';
       line4 = 'Tip: si mantienes pulsada la tecla "shift"';
       line5 = 'podras vender en paquetes de 100 unidades.';
-      line6 = '';
+      line6 = 'Tip2: pulsa la tecla P para pausar el juego.';
       break;
     case uiGold:
       line1 = 'Esta es la cantidad de oro conseguido. Podras';
@@ -235,6 +237,22 @@ function drawAuxText(y){
       line4 = 'Costo: ' + shopCost;
       line5 = 'Impuesto: ' + shopTax;
       line6 = 'Beneficio: ' + shopBenefict + ' de oro.';
+      break;
+    case createFabric:
+      line1 = 'La fábrica utiliza tus recursos para manufacturar';
+      line2 = 'diversos productos, que se venden al por mayor.';
+      line3 = 'Alimento/Madera: ' + fabricFoodCost + '/' + fabricLumberCost;
+      line4 = 'Costo: ' + fabricCost;
+      line5 = 'Impuesto: ' + fabricTax;
+      line6 = 'Beneficio: ' + fabricBenefict + ' de oro.';
+      break;
+    case moveCameraButtons:
+      line1 = 'Puedes utilizar este panel para mover la cámara del';
+      line2 = 'mapa. También es posible hacerlo con las arrow keys';
+      line3 = 'del teclado.';
+      line4 = '';
+      line5 = '';
+      line6 = '';
       break;
   }
   ctx.drawImage(auxText,0,0,logBoxWidth,logBoxHeight,logBoxX,logBoxY,logBoxWidth,logBoxHeight);
